@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Commit" representedClassName="Commit" syncable="YES">
+        <attribute name="authorTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatarUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commitHash" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commitTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="repoId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Owner" representedClassName="Owner" syncable="YES">
+        <attribute name="logoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ownerTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="repoRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Repository" inverseName="ownerRelation" inverseEntity="Repository" syncable="YES"/>
+    </entity>
+    <entity name="Repository" representedClassName="Repository" syncable="YES">
+        <attribute name="fullTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ownerId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="repoDetails" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="repoTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="starsCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="ownerRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Owner" inverseName="repoRelation" inverseEntity="Owner" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Commit" positionX="-54" positionY="-9" width="128" height="135"/>
+        <element name="Owner" positionX="-54.27734375" positionY="244.03125" width="128" height="103"/>
+        <element name="Repository" positionX="-298.28515625" positionY="108.0859375" width="128" height="148"/>
+    </elements>
+</model>
